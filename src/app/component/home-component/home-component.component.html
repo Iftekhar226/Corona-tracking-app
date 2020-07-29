@@ -1,0 +1,63 @@
+<!-- <div class="jumbotron bt-white">
+    <h1 class="display-4 text-center"> Crona Covid 19 Tracker</h1>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium ea eius praesentium nam doloremque illo neque quia commodi voluptas, adipisci tenetur dolor earum nihil et nobis expedita? Nobis, consectetur omnis?    </p>
+    <hr class="my-4">
+    <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos sed velit cum quis. Nam aperiam, blanditiis repellendus fuga placeat in similique itaque eum ullam, tenetur distinctio reprehenderit vitae neque minus?</p>
+</div> -->
+
+<div class="jumbotrn bg-white">
+    <h1 class="display-4 text-center text-capitalize"> Crona covid 19 Tracker </h1>
+    <hr>
+    <div class="ui form">
+        <div class="inline fields">
+          <label for="fruit text-capitalize">Select case type:</label>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="caseType" id='c' checked="" #c value="c" (click)="updateChart(c)" tabindex="0" class="hidden">
+              <label for="c">Confirmed</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="caseType" id='d' value="d" #d (click)="updateChart(d)" tabindex="0" class="hidden">
+              <label for="d">Deaths</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="caseType" id='r' value="r" #r (click)="updateChart(r)" tabindex="0" class="hidden">
+              <label for="r">Recovered</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input type="radio" name="caseType" id="a"  value="a" #a (click)="updateChart(a)" tabindex="0" class="hidden">
+              <label for="a">Active</label>
+            </div>
+          </div>
+       
+        </div>
+      </div>
+
+    <app-dashboard-card [totalConfirmed]="totalConfirmed"  [totalDeaths]="totalDeaths"  [totalRecovered]="totalRecovered"
+      [totalActive]="totalActive" ></app-dashboard-card>
+    
+</div>
+
+
+
+
+
+
+
+<div class="row">
+    
+    <div class="col">
+      <google-chart [type]='chart.PieChart' [data]='dataTableList'></google-chart>
+    </div>
+
+    <div class="col">
+      <google-chart [type]='chart.ColumnChart' [data]='dataTableList'></google-chart>
+    </div>
+    
+</div>
